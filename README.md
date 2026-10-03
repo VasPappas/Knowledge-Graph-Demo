@@ -1,45 +1,45 @@
-# Knowledge Graph Demo
+# Knowledge Atlas — public demo v0.2
 
-A public browser-only demonstration of the **Knowledge Map** project.
+A browser-only, read-only knowledge atlas. No installation, model service, database server or API key is required for visitors.
 
-The underlying research and development repository remains private. This repository contains only the static showcase.
+Live site: https://vaspappas.github.io/Knowledge-Graph-Demo/
 
-## What the demo shows
+## Start with the big picture
 
-- Gravity, Jazz, and Love as three deliberately different knowledge domains
-- typed nodes and semantic relations
-- statement-level epistemic status
-- provenance/source display
-- shortest-path exploration
-- a cross-domain Gravity → Love path through the different senses of “attraction”
-- preserved assessment history showing how a knowledge claim can be corrected without deleting its past
+Eight **provisional editorial regions** organize three deliberately small seed collections. Three main journeys are available:
 
-## Run
+- Nature → Physics → Gravitation
+- Culture → Music → Jazz
+- Mind → Emotions & relationships → Love
 
-Nothing needs to be installed.
+Love also has limited literary and ethical views. Every route opens the **same node `L01`**, not a duplicate. Regions without mapped records say **Not yet populated**; an empty region is not evidence that the world has no knowledge of it.
 
-This repository is designed for GitHub Pages and consists of a static browser application.
+## What is retained
 
-### Enable GitHub Pages
+The 33 seed nodes, 28 statements, stable IDs, original status labels, and explicitly stored Parker/bebop illustrative history remain. The original public HTML is preserved in `archive/v0.1.html` as well as in Git history. It is a legacy artifact, not the current evidence policy.
 
-Open:
+## Evidence boundary
 
-**Settings → Pages**
+The original status labels are **seed labels, not independently verified findings**. All statements currently have unverified passage-level support. A source field may name a work or simply say something general such as “Jazz histories”; neither is represented as a verified citation.
 
-Then choose:
+The Parker/bebop correction sequence is a **scripted illustration**, not autonomous self-correction or a record of actual research decisions. Its synthetic dates remain accessible under an explicit label. No default assessment dates are manufactured for other statements.
 
-- **Source:** Deploy from a branch
-- **Branch:** main
-- **Folder:** / (root)
+## Files
 
-and Save.
+- `data/knowledge.mjs` — original seed records plus a separate v0.2 audit policy; exports are frozen to discourage accidental mutation.
+- `data/atlas.json` — versioned regions, topics, mappings, rationales and curator metadata.
+- `assets/core.mjs` — pure validation, projection, search and path functions.
+- `assets/app.mjs` / `assets/app.css` — interface and navigation.
+- `tests/core.test.mjs` — dependency-free Node regression tests.
+- `tests/browser_test.py` — in-memory Chromium interaction tests; no live-network verification.
+- `TESTING.md` — test scope and limitations.
 
-The page should then be published at:
+Atlas placement never creates knowledge statements. Graph colours retain the original seed-collection labels; they are not exclusive ontology categories. Counts across regions overlap.
 
-`https://vaspappas.github.io/Knowledge-Graph-Demo/`
+## Publishing
 
-## Status
+GitHub Pages continues to serve **main / (root)**. Visitors do not need to change any settings. There is no build step or external runtime dependency. The main research and development repository remains private; this repository contains only the public static demonstration and its tests.
 
-**MVP v0.1**
+## Not yet implemented
 
-The current content is a deliberately small ontology proof-of-concept, not yet a finished scholarly corpus.
+Autonomous ingestion, scholarly verification, authenticated editing, global historical snapshots, live assessment, and AI-generated prose are not part of this version. Search is keyword retrieval. Browsing a path (including backwards over an edge) does not establish a causal or inferred relationship.

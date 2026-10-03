@@ -1,0 +1,40 @@
+{
+  "version": "0.2",
+  "createdOn": "2026-10-04",
+  "curator": "Knowledge Map prototype (AI-assisted)",
+  "policy": "An editorial navigation scheme, not a universal classification or a source of knowledge claims. Multiple routes can map to the same immutable node IDs.",
+  "realms": [
+    {"id":"nature","name":"Nature","description":"Matter, energy, space and the physical world.","mark":"01","color":"#79baff","planned":["Chemistry","Earth systems","Astronomy"]},
+    {"id":"life","name":"Life","description":"Living systems, organisms and their environments.","mark":"02","color":"#85cda6","planned":["Biology","Evolution","Ecology","Medicine"]},
+    {"id":"mind","name":"Mind","description":"Experience, thought, emotion and understanding.","mark":"03","color":"#c6a5ff","planned":["Cognition","Consciousness","Learning"]},
+    {"id":"society","name":"Society","description":"Relationships, institutions and collective life.","mark":"04","color":"#eaa17f","planned":["Institutions","Economics","Law","Social relations"]},
+    {"id":"culture","name":"Culture","description":"Music, literature, art and shared expression.","mark":"05","color":"#ffbf6e","planned":["Visual art","Language","Cultural memory"]},
+    {"id":"technology","name":"Technology","description":"Tools, inventions and designed systems.","mark":"06","color":"#76d5d2","planned":["Engineering","Computing","Communication"]},
+    {"id":"formal","name":"Formal Systems","description":"Patterns, structures and systems of reasoning.","mark":"07","color":"#afbacf","planned":["Mathematics","Logic","Statistics"]},
+    {"id":"values","name":"Meaning & Values","description":"Ethical questions, purpose and ways of living.","mark":"08","color":"#ff91b0","planned":["Meaning","Aesthetics","Belief"],"preview":true}
+  ],
+  "topics": [
+    {"id":"physics","name":"Physics","parent":"nature","description":"A starting point for our small physical-science collection."},
+    {"id":"gravitation","name":"Gravitation","parent":"physics","description":"Enter the gravity seed graph: concepts, theories, people and a work.","mapping":"map-gravity"},
+    {"id":"emotions","name":"Emotions & relationships","parent":"mind","description":"A thematic entrance, not a claim that every subject here is an emotion."},
+    {"id":"love","name":"Love","parent":"emotions","description":"Explore experience, attachment and competing conceptions.","mapping":"map-love"},
+    {"id":"music","name":"Music","parent":"culture","description":"Our first musical case study is jazz."},
+    {"id":"jazz","name":"Jazz","parent":"music","description":"Explore performers, practices and the bebop correction illustration.","mapping":"map-jazz"},
+    {"id":"literature","name":"Literature","parent":"culture","description":"A small alternative entrance to the same love records.","preview":true},
+    {"id":"love-literature","name":"Love in literature","parent":"literature","description":"A literary lens on the existing love graph, not a second Love entity.","mapping":"map-literary-love","preview":true},
+    {"id":"ethics","name":"Ethics","parent":"values","description":"A limited conceptual preview using our love-as-practice record.","preview":true},
+    {"id":"love-practice","name":"Love as a practice","parent":"ethics","description":"An ethical lens on the same Love node. This is not a universal definition.","mapping":"map-practical-love","preview":true}
+  ],
+  "mappings": [
+    {"id":"map-gravity","focus":"G01","nodeIds":["G01","G02","G03","G04","G05","G06","G07","G08","G09","G10","G11"],"rationale":"The editors placed the original gravity collection here as a route into physical theories and their representations. Placement does not verify the statements."},
+    {"id":"map-love","focus":"L01","nodeIds":["L01","L02","L03","L04","L05","L06","L07","L08","L09","L10","L11"],"rationale":"The editors grouped the love collection here to explore experience and relationships. This does not classify love exclusively as an emotion."},
+    {"id":"map-jazz","focus":"J01","nodeIds":["J01","J02","J03","J04","J05","J06","J07","J08","J09","J10","J11"],"rationale":"The editors placed the original jazz collection within Music for browsing. The route is not a definition of jazz or an attribution of invention."},
+    {"id":"map-literary-love","focus":"L01","nodeIds":["L01","L04","L09"],"rationale":"This editorial lens selects the existing Love, Romantic love and Romeo and Juliet records to explore representation. No new statements are created by the selection."},
+    {"id":"map-practical-love","focus":"L01","nodeIds":["L01","L08"],"rationale":"This editorial lens emphasizes the existing love-as-practice conception. The placement is not an endorsement of one conception over the others."}
+  ],
+  "journeys":[
+    {"topic":"gravitation","label":"From the universe to a claim","question":"Explore gravity through theories and their evidence notes."},
+    {"topic":"jazz","label":"From culture to a correction","question":"Explore jazz and a scripted example of revising a claim."},
+    {"topic":"love","label":"One concept, several perspectives","question":"Reach the same Love record through mind, literature or ethics."}
+  ]
+}

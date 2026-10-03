@@ -1,0 +1,80 @@
+/** Immutable v0.1 seed records. Editorial audit metadata is separate below. */
+export const nodes = [
+["G01","Gravity","Phenomenon","gravity","The physical phenomenon associated with gravitational interaction."],
+["G02","Concept of gravity","Concept","gravity","Human conceptual representations of gravity."],
+["G03","Isaac Newton","Person","gravity","Mathematician and natural philosopher associated with classical gravitation."],
+["G04","Principia Mathematica","Work","gravity","Newton's Mathematical Principles of Natural Philosophy."],
+["G05","Newtonian gravitation","Theory","gravity","Classical theory of gravitation associated with Newton."],
+["G06","Inverse-square law","Law","gravity","An inverse-square relationship used in Newtonian gravitation."],
+["G07","Albert Einstein","Person","gravity","Physicist associated with general relativity."],
+["G08","General relativity","Theory","gravity","Relativistic theory of gravitation."],
+["G09","Spacetime curvature","Concept","gravity","Geometrical curvature of spacetime in general relativity."],
+["G10","Gravitational waves","Phenomenon","gravity","Propagating disturbances of spacetime geometry."],
+["G11","Gravitational attraction","Concept","gravity","Attraction in the physical gravitational sense."],
+["J01","Jazz","Concept","jazz","An umbrella musical and cultural category with historically negotiated boundaries."],
+["J02","Improvisation","Process","jazz","Musical creation or variation in performance."],
+["J03","Swing","Concept","jazz","A rhythmic concept and historical jazz category."],
+["J04","Bebop","Concept","jazz","A jazz style and movement associated with the 1940s."],
+["J05","Louis Armstrong","Person","jazz","Jazz trumpeter and singer of major historical influence."],
+["J06","Charlie Parker","Person","jazz","Saxophonist central to bebop's emergence."],
+["J07","Dizzy Gillespie","Person","jazz","Trumpeter central to bebop's emergence."],
+["J08","Thelonious Monk","Person","jazz","Pianist and composer associated with bebop."],
+["J09","Miles Davis","Person","jazz","Trumpeter and bandleader associated with multiple jazz developments."],
+["J10","Kind of Blue","Work","jazz","1959 Miles Davis album frequently associated with modal jazz."],
+["J11","Jam-session culture","Process","jazz","Performance and social practices important to bebop's development."],
+["L01","Love","Concept","love","An umbrella concept covering overlapping experiences, relations, practices and ideals."],
+["L02","Experience of loving","State","love","A first-person or psychological state associated with loving."],
+["L03","Loving relationship","Relationship","love","A relationship structured by forms of love."],
+["L04","Romantic love","Concept","love","A culturally and psychologically significant form of love."],
+["L05","Attachment","State","love","An enduring affective bond or attachment relation."],
+["L06","Attachment theory","Theory","love","A psychological framework concerning attachment bonds."],
+["L07","Love as emotion","Conception","love","A theoretical conception of love primarily as emotion."],
+["L08","Love as practice","Conception","love","A theoretical or ethical conception of love as activity or practice."],
+["L09","Romeo and Juliet","Work","love","Shakespearean tragedy prominently representing romantic love."],
+["L10","Interpersonal attraction","Concept","love","Attraction between persons; related to some forms of romantic love."],
+["L11","attraction (word)","Lexical object","love","The English word ‘attraction’, with physical and interpersonal senses."]
+].map(([id,name,type,domain,desc])=>({id,name,type,domain,desc}));
+export const statements = [
+["S01","G03","authored","G04","established","Bibliographic / historical sources","Newton authored Principia."],
+["S02","G04","presents","G05","established","Principia","The work presents Newton's gravitational framework."],
+["S03","G05","theory about","G01","strongly supported","History of physics","Newtonian gravitation is a theory of gravitational phenomena."],
+["S04","G05","contains law","G06","established","Newtonian mechanics","The inverse-square relation is central to Newtonian gravitation."],
+["S05","G07","developed","G08","strongly supported","Einstein's papers and histories of physics","Einstein played the central role in developing general relativity."],
+["S06","G08","represents in terms of","G09","strongly supported","Einstein 1916 and later GR literature","General relativity represents gravitation through spacetime geometry."],
+["S07","G08","predicts","G10","established","General relativity","General relativity predicts gravitational waves."],
+["S08","G08","supersedes as more general","G05","strongly supported","Modern physics","GR is more general while Newtonian gravitation remains useful in restricted regimes."],
+["S09","G11","related to","G01","strongly supported","Curated MVP statement","Gravitational attraction is a classical way of describing gravitational interaction."],
+["J01S","J05","influenced","J01","strongly supported","Jazz histories","Armstrong exerted major influence on jazz performance and phrasing."],
+["J02S","J06","contributed to emergence of","J04","strongly supported","Scott DeVeaux, The Birth of Bebop","Parker was a central contributor to bebop's emergence."],
+["J03S","J07","contributed to emergence of","J04","strongly supported","Scott DeVeaux, The Birth of Bebop","Gillespie was a central contributor to bebop's emergence."],
+["J04S","J08","contributed to emergence of","J04","strongly supported","Jazz histories","Monk belongs in the wider network around bebop's emergence."],
+["J05S","J04","emerged from","J11","strongly supported","Scott DeVeaux, The Birth of Bebop","Jam-session practices were an important context for bebop."],
+["J06S","J04","emerged from","J03","plausible","Ted Gioia, The History of Jazz","Bebop developed from the swing-era environment while transforming it."],
+["J07S","J06","invented","J04","disputed","Curated correction demo","Sole-inventor language oversimplifies bebop's networked emergence."],
+["J08S","J10","classified as","J01","strongly supported","Jazz histories","Kind of Blue is widely classified within jazz; genre classification remains contextual."],
+["J09S","J01","related to","J02","strongly supported","Jazz histories","Improvisation is central, though not exclusive, to jazz practice."],
+["L01S","L01","umbrella includes","L04","strongly supported","Curated ontology statement","Romantic love is one important family member under the broader concept."],
+["L02S","L06","theory about","L05","established","John Bowlby, Attachment and Loss","Attachment theory concerns attachment bonds."],
+["L03S","L05","related to","L04","strongly supported","Attachment literature","Attachment processes are relevant to many accounts of romantic love."],
+["L04S","L07","characterizes","L01","plausible","Emotion-centered accounts","Love-as-emotion is one theoretical conception, not an ontology-wide fact."],
+["L05S","L08","characterizes","L01","plausible","Erich Fromm, The Art of Loving","Love-as-practice is another conception of love."],
+["L06S","L09","depicts","L04","strongly supported","William Shakespeare, Romeo and Juliet","Romantic love is a central subject of the play."],
+["L07S","L03","related to","L02","plausible","Curated ontology statement","A loving relationship and an experience of loving are related but distinct."],
+["X01","L11","has physical sense","G11","established","English lexical usage","The word attraction has a physical sense."],
+["X02","L11","has interpersonal sense","L10","established","English lexical usage","The word attraction also has an interpersonal sense."],
+["X03","L10","related to","L04","plausible","Psychology and ordinary language","Interpersonal attraction can participate in romantic love but is not identical with it."]
+].map(([id,s,r,o,status,source,why])=>({id,s,r,o,status,source,why}));
+statements.find(s=>s.id==='J07S').history=[
+{date:"2026-01-15",status:"plausible",evidence:"low",why:"Earlier simplified framing: a prominent figure was treated as a sole inventor."},
+{date:"2026-09-01",status:"disputed",evidence:"medium",why:"Sole-inventor language oversimplifies bebop's networked emergence.",supersedes:"2026-01-15 assessment"}
+];
+export const audit = {
+  version:'0.2', basedOn:'fd4c75f610e1942886de1791f17d43c5bc4d4b54',
+  recordedOn:'2026-10-04', actor:'AI-assisted prototype maintenance',
+  verification:'not_passage_verified',
+  policy:'All original statements and labels are retained. They are seed content, not verified findings. No passage-level support has been recorded in this demo.',
+  illustrativeHistories:['J07S'],
+  historyPolicy:'Only explicitly stored history may be shown. J07S is a scripted illustration; its dates are not actual research or assessment timestamps.'
+};
+function freeze(value){if(value&&typeof value==='object'){Object.values(value).forEach(freeze);Object.freeze(value);}return value;}
+freeze(nodes);freeze(statements);freeze(audit);
