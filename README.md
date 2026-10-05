@@ -1,45 +1,41 @@
-# Knowledge Atlas — public demo v0.2
+# Knowledge Atlas — public demo v0.3
 
-A browser-only, read-only knowledge atlas. No installation, model service, database server or API key is required for visitors.
+Live: https://vaspappas.github.io/Knowledge-Graph-Demo/
 
-Live site: https://vaspappas.github.io/Knowledge-Graph-Demo/
+A browser-only, read-only atlas. Visitors need no installation, account, model service, database server or API key. The main research repository remains private.
 
-## Start with the big picture
+## Explore the release
 
-Eight **provisional editorial regions** organize three deliberately small seed collections. Three main journeys are available:
+- **Atlas / Graph:** eight editorial regions and four small collections. Society now opens Government & participation → Democracy.
+- **Democracy:** 10 document/proposition nodes and six bounded documentary attributions, each with an exact passage locator, edition, historical date, addressed population, source link, attestation and assessment.
+- **Sources:** four source records. Three of the six statements share the UDHR source; six attestations do not mean six independent sources.
+- **Relations:** 14 binary definitions and seven structured patterns. The original seed yields 18 candidate binary mappings and 10 held mappings. Missing roles and context are visible, not silently invented.
 
-- Nature → Physics → Gravitation
-- Culture → Music → Jazz
-- Mind → Emotions & relationships → Love
+The combined graph contains **43 nodes and 34 statements**. All original 33 nodes, 28 statements, status labels, stable IDs and illustrative history remain unchanged. Original `data/knowledge.mjs`, `data/atlas.json`, `assets/core.mjs`, prior app modules and tests remain in the repository. The v0.3 app creates a separate read-only projection.
 
-Love also has limited literary and ethical views. Every route opens the **same node `L01`**, not a duplicate. Regions without mapped records say **Not yet populated**; an empty region is not evidence that the world has no knowledge of it.
+## Public review preview, not verified knowledge
 
-## What is retained
+The owner requested publication to the demo. `data/release-v0.3.json` records this later authorization, limited to six allowlisted entries and the registry. The original staged snapshots retain their earlier `publication_allowed: false` values and review status. Preview authorization is not independent verification or approval for publication as established knowledge.
 
-The 33 seed nodes, 28 statements, stable IDs, original status labels, and explicitly stored Parker/bebop illustrative history remain. The original public HTML is preserved in `archive/v0.1.html` as well as in Git history. It is a legacy artifact, not the current evidence policy.
+The six new statements say **a specified document states a specified proposition**. They do not establish practical implementation, present legal effect, a regime classification, or a political recommendation. They are narrow paraphrases, not quotations or a representative account of political traditions worldwide. Each remains **AI text checked; independent review pending**. Reinspection by the same assistant is not independent review. Source snapshots have not been archived.
 
-## Evidence boundary
+The original 28 seed statements still lack checked passage-level support. The Parker/bebop correction sequence is a scripted illustration; its synthetic dates are explicitly labelled. No assessment dates are invented for other seed statements.
 
-The original status labels are **seed labels, not independently verified findings**. All statements currently have unverified passage-level support. A source field may name a work or simply say something general such as “Jazz histories”; neither is represented as a verified citation.
+## Data and interface
 
-The Parker/bebop correction sequence is a **scripted illustration**, not autonomous self-correction or a record of actual research decisions. Its synthetic dates remain accessible under an explicit label. No default assessment dates are manufactured for other statements.
+- `data/knowledge.mjs`: unchanged, frozen legacy seed records.
+- `data/atlas.json`: unchanged v0.2 editorial atlas; the release supplies an additive extension.
+- `data/registry-v0.1.json`: exact staged registry snapshot.
+- `data/democracy-batch-001.json`: exact staged documentary snapshot, including all qualifiers, attestations and assessments.
+- `data/release-v0.3.json`: preview authorization, allowlist, pinned source hashes and Society journey.
+- `assets/live-data-v03.mjs`: validation and read-only projection; no fact promotion, inference or editing.
+- `assets/live-v03.mjs` and `assets/live-v03.css`: current interface.
+- `tests/live-v03.test.mjs`, `tests/browser_v03.py`: new regression and browser-fixture checks.
 
-## Files
+Visual families are not inference rules. Browsing backward along an edge does not reverse the assertion. No new edges are created by atlas placement, paths, aliases or shared vocabulary.
 
-- `data/knowledge.mjs` — original seed records plus a separate v0.2 audit policy; exports are frozen to discourage accidental mutation.
-- `data/atlas.json` — versioned regions, topics, mappings, rationales and curator metadata.
-- `assets/core.mjs` — pure validation, projection, search and path functions.
-- `assets/app.mjs` / `assets/app.css` — interface and navigation.
-- `tests/core.test.mjs` — dependency-free Node regression tests.
-- `tests/browser_test.py` — in-memory Chromium interaction tests; no live-network verification.
-- `TESTING.md` — test scope and limitations.
+## Deployment and test scope
 
-Atlas placement never creates knowledge statements. Graph colours retain the original seed-collection labels; they are not exclusive ontology categories. Counts across regions overlap.
+GitHub Pages continues to serve **main / (root)**. No build step or external runtime dependency was added. See `TESTING.md` for the executed checks and their limits.
 
-## Publishing
-
-GitHub Pages continues to serve **main / (root)**. Visitors do not need to change any settings. There is no build step or external runtime dependency. The main research and development repository remains private; this repository contains only the public static demonstration and its tests.
-
-## Not yet implemented
-
-Autonomous ingestion, scholarly verification, authenticated editing, global historical snapshots, live assessment, and AI-generated prose are not part of this version. Search is keyword retrieval. Browsing a path (including backwards over an edge) does not establish a causal or inferred relationship.
+The unsourced Democracy brainstorm, private audit/agent files, autonomous ingestion, authenticated editing, AI narration and unimplemented visual mockups are not published as working features. This release does not merge the private review branch or change repository visibility.

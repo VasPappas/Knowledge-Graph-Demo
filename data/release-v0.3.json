@@ -1,0 +1,33 @@
+{
+  "version": "0.3.0",
+  "recorded_on": "2026-10-05",
+  "actor": "ChatGPT, implementing the project owner's publication request",
+  "authorization": {
+    "request": "can you add everything to the live demo ?",
+    "mode": "public_review_preview",
+    "demo_display_authorized": true,
+    "verified_knowledge_publication": false,
+    "private_repository_visibility_changed": false,
+    "note": "This later, explicit preview authorization does not change any earlier staging or assessment record. Original publication_allowed=false values remain in the snapshots. They do not become verified or independently reviewed findings by being displayed."
+  },
+  "registry": {"file": "registry-v0.1.json", "version": "0.1.0", "git_blob_sha": "7ca5c07d4ed49724dac0a39072b73d1e7163c356"},
+  "batch": {"file": "democracy-batch-001.json", "id": "DEM-B001", "git_blob_sha": "8974e797f32f71da95cfda712800e379f287881b"},
+  "allowed_statement_ids": ["DEM:ST:001", "DEM:ST:002", "DEM:ST:003", "DEM:ST:004", "DEM:ST:005", "DEM:ST:006"],
+  "review_event": {
+    "actor": "ChatGPT",
+    "recorded_on": "2026-10-05",
+    "scope": "Reinspection of the six bounded paraphrases against the cited primary-document passages: Refworld PDF page 4 and the three National Archives transcriptions.",
+    "independent": false,
+    "result": "No content or source locator changed; independent review remains pending.",
+    "source_snapshots_archived": false
+  },
+  "exclusions": ["The 100 unsourced Democracy brainstorming entries", "Internal audits and agent instructions", "Unimplemented visual mockups", "Political ratings or regime verdicts", "Automatic inference or autonomous ingestion"],
+  "atlas_extension": {
+    "topics": [
+      {"id":"government","name":"Government & participation","parent":"society","description":"A documentary starting point: what particular texts state, with their historical scope."},
+      {"id":"democracy","name":"Democracy","parent":"government","description":"Six attributed document passages. A limited pilot, not a definition, regime assessment or comprehensive history.","mapping":"map-democracy","preview":true}
+    ],
+    "mapping": {"id":"map-democracy","focus":"DEM:W:UDHR","nodeIds":["DEM:W:UDHR","DEM:W:DECLARATION","DEM:W:CONSTITUTION","DEM:W:AMENDMENT19_RESOLUTION","DEM:P:PARTICIPATION","DEM:P:ELECTIONS","DEM:P:ASSOCIATION","DEM:P:CONSENT","DEM:P:HOUSE_SELECTION","DEM:P:SEX_VOTING"],"rationale":"Editorial placement of a small UN/US documentary pilot under Democracy. It does not define democracy, establish practical implementation, connect otherwise disconnected records, or represent world political traditions in full."},
+    "journey": {"topic":"democracy","label":"From a document to its source","question":"Inspect six historical passages, their precise locations and their review status."}
+  }
+}
