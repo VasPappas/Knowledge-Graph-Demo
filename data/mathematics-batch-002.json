@@ -1,0 +1,246 @@
+{
+  "batch_id": "MATH-B002",
+  "domain": "mathematics",
+  "recorded_on": "2026-10-06",
+  "state": "private_review_candidate",
+  "publication_allowed": false,
+  "created_by": "ChatGPT: AI-assisted source inspection and ontology stress testing",
+  "purpose": "Add a refuted universal proposition via counterexample and a hypothesis-dependent theorem, while cross-checking Euclid IX.20.",
+  "limits": "No independent mathematician review or local Lean recompilation. Cross-source Euclid checks are not independent scholarship and do not upgrade review status.",
+  "source_refs_from_batch_001": [
+    "MATH:S:PERSEUS_IX20",
+    "MATH:S:MATHLIB_PRIME_DEFS"
+  ],
+  "nodes": [
+    {
+      "id": "MATH:P:ALL_PRIMES_ODD",
+      "type": "Proposition",
+      "name": "Every prime natural number is odd",
+      "content": "For every natural number p, if p is prime, then p is odd."
+    },
+    {
+      "id": "MATH:N:TWO",
+      "type": "MathematicalObject",
+      "name": "2",
+      "value": "2",
+      "ambient_domain": "ℕ"
+    },
+    {
+      "id": "MATH:P:TWO_IS_PRIME",
+      "type": "Proposition",
+      "name": "2 is prime",
+      "content": "The natural number 2 is prime."
+    },
+    {
+      "id": "MATH:P:TWO_IS_EVEN",
+      "type": "Proposition",
+      "name": "2 is even",
+      "content": "The natural number 2 is even."
+    },
+    {
+      "id": "MATH:CX:TWO_REFUTES_ALL_PRIMES_ODD",
+      "type": "Counterexample",
+      "name": "2 refutes 'every prime is odd'"
+    },
+    {
+      "id": "MATH:P:EUCLID_LEMMA_NAT",
+      "type": "Proposition",
+      "name": "Euclid's lemma for natural numbers",
+      "content": "For natural numbers p, m, n: if p is prime and p divides m·n, then p divides m or p divides n."
+    },
+    {
+      "id": "MATH:PRF:EUCLID_VII30",
+      "type": "Proof",
+      "name": "Euclid Book VII Proposition 30 proof"
+    },
+    {
+      "id": "MATH:FA:PRIME_DVD_MUL",
+      "type": "FormalArtifact",
+      "name": "Mathlib4 Nat.Prime.dvd_mul"
+    }
+  ],
+  "sources": [
+    {
+      "id": "MATH:S:PERSEUS_VII30",
+      "publisher": "Perseus Digital Library",
+      "url": "https://www.perseus.tufts.edu/hopper/text?doc=Euc.+7&fromdoc=Perseus%3Atext%3A1999.01.0086",
+      "edition": "Thomas L. Heath English translation; Perseus Book VII",
+      "locator": "Book VII, Proposition 30",
+      "accessed_on": "2026-10-06",
+      "inspection": "Web text inspected. Proposition states that if a prime measures a product of two numbers, it measures one of the original numbers.",
+      "snapshot_stored": false
+    },
+    {
+      "id": "MATH:S:EUCLID_IX20_ALT",
+      "publisher": "Euclid's Elements online edition",
+      "url": "https://www.euclids-elements.org/elements/books/bookIX/propositions/propIX20/",
+      "edition": "Online presentation of Euclid, Elements, Book IX, Proposition 20",
+      "locator": "Book IX, Proposition 20",
+      "accessed_on": "2026-10-06",
+      "inspection": "Web text independently re-opened as a second presentation. The same proof skeleton and explicit VII.31 dependency are visible. This is a cross-source consistency check, not independent mathematical review.",
+      "snapshot_stored": false
+    },
+    {
+      "id": "MATH:S:MATHLIB_PRIME_BASIC",
+      "publisher": "Lean community / Mathlib4 documentation",
+      "url": "https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Nat/Prime/Basic.html",
+      "edition": "Current Mathlib4 generated documentation inspected 2026-10-06",
+      "locator": "Nat.Prime.eq_two_or_odd, Nat.Prime.even_iff, Nat.Prime.dvd_mul",
+      "accessed_on": "2026-10-06",
+      "inspection": "Documentation exposes the exceptional prime 2 in parity theorems and the product-divisibility theorem for primes.",
+      "snapshot_stored": false
+    }
+  ],
+  "cross_source_checks": [
+    {
+      "id": "MATH:XCHK:EUCLID_IX20",
+      "target_proof": "MATH:PRF:EUCLID_IX20",
+      "source_ids": [
+        "MATH:S:PERSEUS_IX20",
+        "MATH:S:EUCLID_IX20_ALT"
+      ],
+      "observed_structure": [
+        "Begin with an assigned finite multitude of primes.",
+        "Form a number measured by the assigned primes and add one.",
+        "Split on whether the resulting number is prime or composite.",
+        "In the composite case invoke Book VII Proposition 31 to obtain a prime divisor.",
+        "Show that divisor is not one of the assigned primes because otherwise it would divide the difference, one."
+      ],
+      "result": "cross_source_consistent_at_proof_skeleton_level",
+      "review_effect": "none",
+      "caveat": "Both presentations are closely related modern presentations of Euclid and do not constitute independent mathematical review."
+    }
+  ],
+  "proofs": [
+    {
+      "id": "MATH:PRF:EUCLID_VII30",
+      "conclusion": "MATH:P:EUCLID_LEMMA_NAT",
+      "representation_source": "MATH:S:PERSEUS_VII30",
+      "assumptions_or_framework": [
+        "p is prime",
+        "p divides m·n",
+        "natural-number divisibility in Euclid Book VII terminology"
+      ],
+      "method": "Assume the prime does not divide one factor; Euclid VII.29 gives coprimality, and preceding ratio/divisibility results are used to conclude divisibility of the other factor.",
+      "review_status": "historical_text_structure_AI_checked_pending_independent_math_review"
+    }
+  ],
+  "formalizations": [
+    {
+      "id": "MATH:FORM:PRIME_DVD_MUL",
+      "formal_artifact": "MATH:FA:PRIME_DVD_MUL",
+      "mathematical_content": "MATH:P:EUCLID_LEMMA_NAT",
+      "formal_system": "MATH:FS:LEAN_MATHLIB",
+      "source_id": "MATH:S:MATHLIB_PRIME_BASIC",
+      "formal_expression_summary": "Nat.Prime.dvd_mul {p m n : ℕ} (pp : Prime p) : p ∣ m * n ↔ p ∣ m ∨ p ∣ n",
+      "verification": "documentation_inspected_not_locally_recompiled"
+    }
+  ],
+  "counterexamples": [
+    {
+      "id": "MATH:CX:TWO_REFUTES_ALL_PRIMES_ODD",
+      "target_proposition": "MATH:P:ALL_PRIMES_ODD",
+      "witness": "MATH:N:TWO",
+      "witness_facts": [
+        "MATH:P:TWO_IS_PRIME",
+        "MATH:P:TWO_IS_EVEN"
+      ],
+      "scope": "Natural numbers under the modern Mathlib-style prime/parity context",
+      "effect": "refutes_universal_proposition",
+      "basis_source_ids": [
+        "MATH:S:MATHLIB_PRIME_DEFS",
+        "MATH:S:MATHLIB_PRIME_BASIC"
+      ],
+      "explanation": "The source documentation includes Nat.prime_two, and for a prime p gives Even p ↔ p = 2. Therefore 2 is a prime even natural number and witnesses failure of the universal claim that every prime is odd.",
+      "review_status": "AI_source_and_logic_check_pending_independent_math_review",
+      "witness_support": [
+        {
+          "proposition": "MATH:P:TWO_IS_PRIME",
+          "support_type": "formal_documentation",
+          "source_id": "MATH:S:MATHLIB_PRIME_DEFS",
+          "locator": "Nat.prime_two",
+          "note": "Mathlib documentation records a theorem that 2 is prime; this project has not locally recompiled it."
+        },
+        {
+          "proposition": "MATH:P:TWO_IS_EVEN",
+          "support_type": "documented_theorem_plus_instantiation",
+          "source_id": "MATH:S:MATHLIB_PRIME_BASIC",
+          "locator": "Nat.Prime.even_iff",
+          "note": "For a prime p, Mathlib documents Even p ↔ p = 2. Instantiating at p=2 together with Nat.prime_two yields the even witness used here; independent formal replay is pending."
+        }
+      ]
+    }
+  ],
+  "statements": [
+    {
+      "id": "MATH:ST:009",
+      "relation": "MATH_R_PROOF_ESTABLISHES",
+      "subject": "MATH:PRF:EUCLID_VII30",
+      "object": "MATH:P:EUCLID_LEMMA_NAT",
+      "qualifiers": {
+        "scope": "Euclid VII.30 historical theorem/proof interpretation",
+        "hypotheses": [
+          "p prime",
+          "p divides m·n"
+        ]
+      },
+      "workflow_status": "awaiting_independent_math_review",
+      "publication_allowed": false
+    },
+    {
+      "id": "MATH:ST:010",
+      "relation": "MATH_R_FORMALIZES",
+      "subject": "MATH:FA:PRIME_DVD_MUL",
+      "object": "MATH:P:EUCLID_LEMMA_NAT",
+      "qualifiers": {
+        "formal_system": "MATH:FS:LEAN_MATHLIB",
+        "verification": "documentation_inspected_not_locally_recompiled"
+      },
+      "workflow_status": "awaiting_independent_review",
+      "publication_allowed": false
+    }
+  ],
+  "proposition_status_assessments": [
+    {
+      "id": "MATH:AS:ALL_PRIMES_ODD",
+      "proposition": "MATH:P:ALL_PRIMES_ODD",
+      "status": "refuted",
+      "scope": "Natural numbers in the modern prime/parity context",
+      "basis": [
+        "MATH:CX:TWO_REFUTES_ALL_PRIMES_ODD"
+      ],
+      "review_status": "AI_source_and_logic_check_pending_independent_math_review"
+    },
+    {
+      "id": "MATH:AS:EUCLID_LEMMA",
+      "proposition": "MATH:P:EUCLID_LEMMA_NAT",
+      "status": "proved",
+      "scope": "Conditional proposition over natural numbers with the stated prime/divisibility hypotheses",
+      "basis": [
+        "MATH:PRF:EUCLID_VII30",
+        "MATH:FORM:PRIME_DVD_MUL"
+      ],
+      "review_status": "AI_structural_and_source_check_pending_independent_math_review"
+    }
+  ],
+  "attestations": [
+    {
+      "id": "MATH:AT:009",
+      "statement_id": "MATH:ST:009",
+      "source_id": "MATH:S:PERSEUS_VII30",
+      "stance": "supports_historical_proof_record",
+      "locator": "Book VII, Proposition 30"
+    },
+    {
+      "id": "MATH:AT:010",
+      "statement_id": "MATH:ST:010",
+      "source_id": "MATH:S:MATHLIB_PRIME_BASIC",
+      "stance": "supports_formal_artifact_attribution",
+      "locator": "Nat.Prime.dvd_mul"
+    }
+  ],
+  "node_refs_from_batch_001": [
+    "MATH:PRF:EUCLID_IX20",
+    "MATH:FS:LEAN_MATHLIB"
+  ]
+}
