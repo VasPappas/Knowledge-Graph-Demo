@@ -90,7 +90,7 @@ export function buildModel(seedNodes,seedStatements,baseAtlas,registry,democracy
     kind:'mathematics_preview'
   }));
   const nodes=[...base.nodes,...addedNodes],statements=[...base.statements,...addedStatements];
-  const atlas=structuredClone(base.atlas);atlas.version='0.4';atlas.topics.push(...structuredClone(release04.atlas_extension.topics));atlas.mappings.push(structuredClone(release04.atlas_extension.mapping));atlas.journeys.push(structuredClone(release04.atlas_extension.journey));
+  const atlas=structuredClone(base.atlas);atlas.version='0.4';const formalRealm=atlas.realms.find(r=>r.id==='formal');if(formalRealm?.planned)formalRealm.planned=formalRealm.planned.filter(name=>name!=='Mathematics');atlas.topics.push(...structuredClone(release04.atlas_extension.topics));atlas.mappings.push(structuredClone(release04.atlas_extension.mapping));atlas.journeys.push(structuredClone(release04.atlas_extension.journey));
   validate(nodes,statements,atlas);
   const fullNodeMap=new Map(nodes.map(n=>[n.id,n]));
   const generalDefs=[...registry.relations,...registry.patterns];
