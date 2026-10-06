@@ -1,0 +1,98 @@
+{
+  "version": "0.1.0",
+  "recorded_on": "2026-10-06",
+  "state": "private_review_candidate",
+  "principle": "Mathematical proposition content, proof objects, source artifacts and proof status are distinct records.",
+  "proposition_status_model": {
+    "statuses": [
+      "proved",
+      "open",
+      "conjectured",
+      "refuted",
+      "conditional"
+    ],
+    "required_context": [
+      "assumptions_or_framework",
+      "assessment_basis"
+    ],
+    "policy": "Status is relative to mathematical scope and review state; it is not a node type or generic confidence score."
+  },
+  "proof_record": {
+    "required_roles": [
+      "conclusion",
+      "representation_source"
+    ],
+    "optional_roles": [
+      "assumptions",
+      "depends_on",
+      "definitions",
+      "formal_system",
+      "method",
+      "formal_artifact"
+    ],
+    "policy": "A Proof record is a derivation object. A source can contain or describe it without being identical to it."
+  },
+  "relation_candidates": [
+    {
+      "id": "MATH_R_DEFINES",
+      "shape": "structured",
+      "roles": [
+        "source_or_framework",
+        "term",
+        "definition_content"
+      ],
+      "definition": "A specified source or formal framework defines a term using specified mathematical content.",
+      "automatic_truth_inference": false
+    },
+    {
+      "id": "MATH_R_PROOF_ESTABLISHES",
+      "shape": "structured",
+      "roles": [
+        "proof",
+        "conclusion",
+        "assumptions_or_framework"
+      ],
+      "definition": "A proof is assessed as establishing a proposition relative to its assumptions/framework.",
+      "automatic_truth_inference": false
+    },
+    {
+      "id": "MATH_R_PROOF_USES",
+      "shape": "binary_with_scope",
+      "roles": [
+        "proof",
+        "dependency"
+      ],
+      "definition": "A proof uses a proposition, definition, lemma or prior result as an explicit dependency.",
+      "automatic_truth_inference": false
+    },
+    {
+      "id": "MATH_R_FORMALIZES",
+      "shape": "structured",
+      "roles": [
+        "formal_artifact",
+        "mathematical_content",
+        "formal_system"
+      ],
+      "definition": "A formal artifact encodes a proposition or definition in a named formal system/library.",
+      "automatic_truth_inference": false
+    },
+    {
+      "id": "MATH_R_STATUS",
+      "shape": "assessment",
+      "roles": [
+        "proposition",
+        "status",
+        "scope",
+        "basis"
+      ],
+      "definition": "Records mathematical proof status without turning status into a primitive edge."
+    }
+  ],
+  "guardrails": [
+    "No theorem/conjecture node type is required merely because a proposition is proved or open.",
+    "No proof status is inferred from popularity, citation count, numerical testing or model confidence.",
+    "A formal-system theorem declaration is not counted as an independent historical proof unless its derivation/provenance is separately modeled.",
+    "No equivalence between Euclidean and modern prime definitions is asserted by default.",
+    "Counterexamples and implications must match proposition scope and assumptions."
+  ]
+}
