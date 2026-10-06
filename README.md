@@ -1,4 +1,4 @@
-# Knowledge Atlas — public demo v0.3
+# Knowledge Atlas — public demo v0.4
 
 Live: https://vaspappas.github.io/Knowledge-Graph-Demo/
 
@@ -6,36 +6,76 @@ A browser-only, read-only atlas. Visitors need no installation, account, model s
 
 ## Explore the release
 
-- **Atlas / Graph:** eight editorial regions and four small collections. Society now opens Government & participation → Democracy.
-- **Democracy:** 10 document/proposition nodes and six bounded documentary attributions, each with an exact passage locator, edition, historical date, addressed population, source link, attestation and assessment.
-- **Sources:** four source records. Three of the six statements share the UDHR source; six attestations do not mean six independent sources.
-- **Relations:** 14 binary definitions and seven structured patterns. The original seed yields 18 candidate binary mappings and 10 held mappings. Missing roles and context are visible, not silently invented.
+- **Atlas / Graph:** eight editorial regions and five small collections.
+- **Mathematics:** Formal Systems → Mathematics → Prime numbers & proof.
+- **Proof Explorer:** the same infinitude-of-primes proposition is reached by an Euclid-style finite construction and an Euler-style analytic route, with distinct dependency paths.
+- **Mathematical status:** proved, open, refuted and proved-under-explicit-hypotheses cases are represented as proposition assessments rather than primitive Theorem/Conjecture node types.
+- **Democracy:** the six source-linked documentary attributions from v0.3 remain available.
+- **Sources:** 16 public-review source records: 4 Democracy and 12 Mathematics.
+- **Relations:** the general relation registry remains visible, with five additional Mathematics proof/formalization/status semantics.
 
-The combined graph contains **43 nodes and 34 statements**. All original 33 nodes, 28 statements, status labels, stable IDs and illustrative history remain unchanged. Original `data/knowledge.mjs`, `data/atlas.json`, `assets/core.mjs`, prior app modules and tests remain in the repository. The v0.3 app creates a separate read-only projection.
+The combined projection contains **67 nodes and 46 displayed statements**. All original 33 nodes, 28 statements, stable IDs and illustrative history remain unchanged.
 
-## Public review preview, not verified knowledge
+## Mathematics is a review preview, not a proof certificate
 
-The owner requested publication to the demo. `data/release-v0.3.json` records this later authorization, limited to six allowlisted entries and the registry. The original staged snapshots retain their earlier `publication_allowed: false` values and review status. Preview authorization is not independent verification or approval for publication as established knowledge.
+The project owner explicitly requested the Mathematics build be added to the Atlas. `data/release-v0.4.json` records that display authorization separately from the original staged Mathematics snapshots.
 
-The six new statements say **a specified document states a specified proposition**. They do not establish practical implementation, present legal effect, a regime classification, or a political recommendation. They are narrow paraphrases, not quotations or a representative account of political traditions worldwide. Each remains **AI text checked; independent review pending**. Reinspection by the same assistant is not independent review. Source snapshots have not been archived.
+Those snapshots still say `publication_allowed: false` and retain pending independent mathematical review. Public display does not turn them into independently verified findings.
 
-The original 28 seed statements still lack checked passage-level support. The Parker/bebop correction sequence is a scripted illustration; its synthetic dates are explicitly labelled. No assessment dates are invented for other seed statements.
+The current Mathematics pilot contains:
 
-## Data and interface
+- 24 Mathematics nodes;
+- 12 displayed Mathematics statements;
+- 12 source records;
+- 3 Proof records;
+- 4 proposition-status assessments;
+- 2 definition records;
+- 3 formalization records;
+- 1 explicit counterexample record.
 
-- `data/knowledge.mjs`: unchanged, frozen legacy seed records.
-- `data/atlas.json`: unchanged v0.2 editorial atlas; the release supplies an additive extension.
-- `data/registry-v0.1.json`: exact staged registry snapshot.
-- `data/democracy-batch-001.json`: exact staged documentary snapshot, including all qualifiers, attestations and assessments.
-- `data/release-v0.3.json`: preview authorization, allowlist, pinned source hashes and Society journey.
-- `assets/live-data-v03.mjs`: validation and read-only projection; no fact promotion, inference or editing.
-- `assets/live-v03.mjs` and `assets/live-v03.css`: current interface.
-- `tests/live-v03.test.mjs`, `tests/browser_v03.py`: new regression and browser-fixture checks.
+Important distinctions remain visible:
 
-Visual families are not inference rules. Browsing backward along an edge does not reverse the assertion. No new edges are created by atlas placement, paths, aliases or shared vocabulary.
+- proposition ≠ proof;
+- proof ≠ source containing or describing the proof;
+- formal theorem artifact ≠ independent historical proof;
+- computational checking ≠ proof of a universal claim;
+- historical definition ≠ automatically equivalent modern definition;
+- two proofs of one proposition ≠ two propositions;
+- different proof paths ≠ a formal theorem of proof independence.
 
-## Deployment and test scope
+Mathlib documentation was inspected but was **not locally recompiled or independently audited**. Source snapshots are not archived.
 
-GitHub Pages continues to serve **main / (root)**. No build step or external runtime dependency was added. See `TESTING.md` for the executed checks and their limits.
+## Self-correction demonstrated structurally
 
-The unsourced Democracy brainstorm, private audit/agent files, autonomous ingestion, authenticated editing, AI narration and unimplemented visual mockups are not published as working features. This release does not merge the private review branch or change repository visibility.
+During the Mathematics stress test an intermediate record treated a formal theorem artifact as though it were a document under `R_DOCUMENT_STATES`. The relation typing rejected that design, and the row was removed before release. Formalization and documentary attribution remain separate structures.
+
+The refuted proposition “every prime natural number is odd” is also preserved rather than deleted: the counterexample record identifies 2 as the witness, while the original proposition remains inspectable with status `refuted`.
+
+## Validation
+
+The v0.4 pull-request validation ran on GitHub Actions using Node 20:
+
+- v0.4 module syntax checks: **passed**;
+- Node regression tests across v0.2/v0.3/v0.4: **82 passed, 0 failed**.
+
+The v0.4 suite verifies exact staged Mathematics blob hashes, counts, atlas ancestry, proposition statuses, proof comparison, counterexample preservation, blocked fact promotion, publication guards, disconnected-domain behavior and previous release invariants.
+
+**Browser automation was not rerun for v0.4.** The earlier v0.3 release had 31 controlled in-memory Chromium scenario groups, but those are not evidence that the new Mathematics UI has been live-browser tested. GitHub Pages deployment status is checked separately after publication.
+
+See `TESTING.md` for the boundary.
+
+## Public data
+
+- `data/knowledge.mjs`: unchanged legacy seed.
+- `data/atlas.json`: unchanged v0.2 base atlas; releases add read-only extensions.
+- `data/democracy-batch-001.json`: exact v0.3 Democracy snapshot.
+- `data/registry-v0.1.json`: relation registry snapshot.
+- `data/mathematics-batch-001.json`: definitions, Euclid IX.20, Mathlib formalization, Riemann hypothesis.
+- `data/mathematics-batch-002.json`: counterexample and Euclid's lemma stress cases.
+- `data/mathematics-batch-003.json`: second proof path for infinitude of primes.
+- `data/mathematics-semantics-v0.1.json`: proof/status/formalization semantics.
+- `data/release-v0.4.json`: display authorization and Mathematics Atlas mapping.
+
+## Still not implemented
+
+Autonomous ingestion, scholarly verification, authenticated editing, local Lean replay, source snapshot archiving, proof-term inspection, global historical snapshots and unrestricted AI-generated prose remain outside this static release.
