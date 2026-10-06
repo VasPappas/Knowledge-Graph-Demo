@@ -1,0 +1,20 @@
+name: validate atlas
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Check v0.4 module syntax
+        run: |
+          node --check assets/live-data-v04.mjs
+          node --check assets/live-v04.mjs
+      - name: Run Node regression tests
+        run: node --test tests/*.test.mjs
