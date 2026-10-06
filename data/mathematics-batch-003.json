@@ -1,0 +1,179 @@
+{
+  "batch_id": "MATH-B003",
+  "domain": "mathematics",
+  "recorded_on": "2026-10-06",
+  "state": "private_review_candidate",
+  "publication_allowed": false,
+  "created_by": "ChatGPT: AI-assisted source inspection and ontology stress testing",
+  "purpose": "Represent a second, analytically distinct proof of the same infinitude-of-primes proposition and compare proof dependency paths.",
+  "limits": "The proof is represented from modern lecture-note presentations of Euler's argument. Historical attribution to Euler is source-attributed; no claim is made that this record reproduces Euler's original text verbatim. Independent mathematician review remains pending.",
+  "node_refs_from_batch_001": [
+    "MATH:P:INFINITE_PRIMES",
+    "MATH:C:RIEMANN_ZETA",
+    "MATH:PRF:EUCLID_IX20"
+  ],
+  "nodes": [
+    {
+      "id": "MATH:P:EULER_PRODUCT_ZETA",
+      "type": "Proposition",
+      "name": "Euler product formula for the zeta function",
+      "content": "For real s > 1, ζ(s) equals the product over primes p of (1 - p^(-s))^(-1).",
+      "scope": "real s > 1"
+    },
+    {
+      "id": "MATH:P:ZETA_UNBOUNDED_AT_ONE",
+      "type": "Proposition",
+      "name": "Zeta is unbounded as s approaches 1 from above",
+      "content": "As real s approaches 1 from above, ζ(s) becomes unbounded.",
+      "scope": "real s → 1+"
+    },
+    {
+      "id": "MATH:PRF:EULER_ANALYTIC_INFINITE_PRIMES",
+      "type": "Proof",
+      "name": "Euler-style analytic proof of infinitely many primes"
+    }
+  ],
+  "sources": [
+    {
+      "id": "MATH:S:STANFORD_EULER_PRIMES",
+      "publisher": "Stanford University Department of Mathematics",
+      "author": "K. Soundararajan",
+      "url": "https://math.stanford.edu/~ksound/Math155Spr12/Dirichlet1.pdf",
+      "edition": "Lecture notes, Dirichlet's theorem on primes in progressions, I",
+      "locator": "Page 1, lines introducing Euler's proof; proof continues through Corollary 2 on page 3",
+      "accessed_on": "2026-10-06",
+      "inspection": "The notes explicitly recall Euler's proof: ζ(s) has an Euler product for s>1; finitely many primes would keep that product bounded as s→1+, while the zeta sum is unbounded by harmonic-series divergence. The notes further derive divergence of the reciprocal-prime sum.",
+      "snapshot_stored": false
+    },
+    {
+      "id": "MATH:S:COLUMBIA_EULER_PRODUCT",
+      "publisher": "Columbia University Department of Mathematics",
+      "author": "Peter Woit",
+      "url": "https://www.math.columbia.edu/~woit/fourier-analysis/fouriernotes.pdf",
+      "edition": "Fourier Analysis Notes, Spring 2020",
+      "locator": "Section 6.6, Euler product formula and infinitude-of-primes application",
+      "accessed_on": "2026-10-06",
+      "inspection": "The notes derive the Euler product from unique factorization and explain that ζ(s) tends to infinity as s→1+, which forces infinitely many prime factors in the product.",
+      "snapshot_stored": false
+    }
+  ],
+  "proofs": [
+    {
+      "id": "MATH:PRF:EULER_ANALYTIC_INFINITE_PRIMES",
+      "conclusion": "MATH:P:INFINITE_PRIMES",
+      "representation_sources": [
+        "MATH:S:STANFORD_EULER_PRIMES",
+        "MATH:S:COLUMBIA_EULER_PRODUCT"
+      ],
+      "depends_on": [
+        "MATH:P:EULER_PRODUCT_ZETA",
+        "MATH:P:ZETA_UNBOUNDED_AT_ONE"
+      ],
+      "assumptions_or_framework": [
+        "real parameter s > 1 for the Euler product identity",
+        "standard real-analysis limit as s approaches 1 from above"
+      ],
+      "method_family": "analytic_euler_product_divergence",
+      "method": "If there were only finitely many primes, the finite Euler product would remain bounded as s→1+. But ζ(s) is unbounded in that limit, so the prime set cannot be finite.",
+      "review_status": "AI_source_and_structure_checked_pending_independent_math_review"
+    }
+  ],
+  "statements": [
+    {
+      "id": "MATH:ST:011",
+      "relation": "MATH_R_PROOF_USES",
+      "subject": "MATH:PRF:EULER_ANALYTIC_INFINITE_PRIMES",
+      "object": "MATH:P:EULER_PRODUCT_ZETA",
+      "qualifiers": {
+        "role": "analytic_dependency",
+        "scope": "real s > 1"
+      },
+      "workflow_status": "awaiting_independent_math_review",
+      "publication_allowed": false
+    },
+    {
+      "id": "MATH:ST:012",
+      "relation": "MATH_R_PROOF_USES",
+      "subject": "MATH:PRF:EULER_ANALYTIC_INFINITE_PRIMES",
+      "object": "MATH:P:ZETA_UNBOUNDED_AT_ONE",
+      "qualifiers": {
+        "role": "analytic_dependency",
+        "scope": "s → 1+"
+      },
+      "workflow_status": "awaiting_independent_math_review",
+      "publication_allowed": false
+    },
+    {
+      "id": "MATH:ST:013",
+      "relation": "MATH_R_PROOF_ESTABLISHES",
+      "subject": "MATH:PRF:EULER_ANALYTIC_INFINITE_PRIMES",
+      "object": "MATH:P:INFINITE_PRIMES",
+      "qualifiers": {
+        "scope": "modern analytic presentation of Euler-style argument",
+        "claim_scope": "proof_conclusion"
+      },
+      "workflow_status": "awaiting_independent_math_review",
+      "publication_allowed": false
+    }
+  ],
+  "attestations": [
+    {
+      "id": "MATH:AT:011",
+      "statement_id": "MATH:ST:011",
+      "source_id": "MATH:S:STANFORD_EULER_PRIMES",
+      "stance": "supports_proof_dependency_attribution",
+      "locator": "Page 1: zeta Euler product for s>1"
+    },
+    {
+      "id": "MATH:AT:012",
+      "statement_id": "MATH:ST:012",
+      "source_id": "MATH:S:STANFORD_EULER_PRIMES",
+      "stance": "supports_proof_dependency_attribution",
+      "locator": "Pages 1–2: ζ(s) unbounded as s→1+ via harmonic-series/integral estimate"
+    },
+    {
+      "id": "MATH:AT:013",
+      "statement_id": "MATH:ST:013",
+      "source_id": "MATH:S:STANFORD_EULER_PRIMES",
+      "stance": "supports_proof_conclusion_attribution",
+      "locator": "Page 1 proof outline and Corollary 2"
+    }
+  ],
+  "proof_comparison": {
+    "id": "MATH:PCOMP:INFINITE_PRIMES",
+    "proposition": "MATH:P:INFINITE_PRIMES",
+    "proofs": [
+      {
+        "proof_id": "MATH:PRF:EUCLID_IX20",
+        "method_family": "finite_arithmetic_construction",
+        "key_dependencies": [
+          "MATH:P:COMPOSITE_HAS_PRIME_DIVISOR"
+        ],
+        "conceptual_route": "finite assigned primes → common multiple + 1 → new prime"
+      },
+      {
+        "proof_id": "MATH:PRF:EULER_ANALYTIC_INFINITE_PRIMES",
+        "method_family": "analytic_euler_product_divergence",
+        "key_dependencies": [
+          "MATH:P:EULER_PRODUCT_ZETA",
+          "MATH:P:ZETA_UNBOUNDED_AT_ONE"
+        ],
+        "conceptual_route": "zeta Euler product + divergence at 1 → finitely many primes impossible"
+      }
+    ],
+    "same_conclusion": true,
+    "automatically_equivalent_proofs": false,
+    "independence_claim": "distinct_dependency_paths_not_a_formal_independence_theorem",
+    "note": "The two records establish the same named proposition through materially different mathematical dependencies. They are not merged, ranked, or treated as separate propositions."
+  },
+  "cross_source_check": {
+    "id": "MATH:XCHK:EULER_ANALYTIC",
+    "sources": [
+      "MATH:S:STANFORD_EULER_PRIMES",
+      "MATH:S:COLUMBIA_EULER_PRODUCT"
+    ],
+    "result": "consistent_at_high_level_argument_structure",
+    "review_effect": "none",
+    "caveat": "Agreement between lecture-note sources is supporting documentation, not independent proof verification."
+  }
+}
