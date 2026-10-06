@@ -1,41 +1,76 @@
-# v0.3 testing record
+# Atlas testing record
 
-Recorded 5 October 2026. Tests were executed in a disposable assistant environment before the public branch update.
+## v0.4 — Mathematics
 
-## Core and contract tests
+Recorded 6 October 2026.
 
-From the repository root:
+### GitHub Actions validation
+
+The pull-request workflow `validate atlas` runs:
 
 ```sh
+node --check assets/live-data-v04.mjs
+node --check assets/live-v04.mjs
 node --test tests/*.test.mjs
 ```
 
-**56 passed; 0 failed**: the original 20 tests plus 36 new cases. The old tests use the unchanged original atlas and seed; the new tests use the combined release projection.
+On the v0.4 review branch:
 
-Coverage includes exact Git blob hashes for the original seed and staged registry/batch, 43 nodes and 34 statements, original record identity and history preservation, eight regions/four journeys, all previous Love lenses, 18 candidate mappings/10 held mappings, all six source chains, scope and edition matching, allowlist enforcement, required preview authorization, blocked inference and status promotion, malformed references, unsafe source URLs, directed/browsing paths, and immutable input records.
+- module syntax checks: **passed**;
+- Node tests: **82 passed, 0 failed**.
 
-## Browser interactions
+The 82 tests include all retained v0.2/v0.3 Node tests plus the new Mathematics regression suite.
 
-```sh
-python tests/browser_v03.py
-```
+### v0.4 structural coverage
 
-**31 scenario groups passed; 0 failed**, in Chromium at 1440 × 1100 and 390 × 844. Groups include repeated checks of all six documentary statements and four mobile views.
+The actual v0.4 projection model was executed against the staged JSON and produced:
 
-Coverage includes Society navigation, source links and PDF page anchors, historical scope and population, the 1919 proposal context, four sources, registry definitions and held filters, all 43 graph nodes/34 edges, old journeys and semantic paths, Love identity, scripted history, new keyword retrieval, keyboard access, safe search/unknown routes, deep links, mobile overflow and uncaught JavaScript errors.
+- 67 nodes;
+- 46 displayed statements;
+- 16 source records;
+- 24 Mathematics nodes;
+- 12 Mathematics statements;
+- 12 Mathematics sources;
+- 3 Proof records;
+- 4 mathematical proposition-status assessments;
+- Formal Systems → Mathematics → Prime numbers & proof;
+- 5 Atlas journeys.
 
-### Important limitation
+The checks verify:
 
-This environment blocks browser network navigation. These checks load **our own files in memory**, remove module import/export declarations only inside the test fixture, and supply our JSON files through a controlled fetch stub. No browser policy or security setting was changed.
+- exact Git blob hashes for the four staged Mathematics snapshots;
+- all original seed identities remain unchanged;
+- Democracy v0.3 coverage remains intact;
+- no primitive `Theorem` or `Conjecture` node type;
+- proved, open and refuted proposition-status cases;
+- Euclid's lemma retains explicit conditional scope;
+- Euclid IX.20 and the Euler-style proof both conclude the same proposition ID;
+- the two proof records preserve different dependency sets;
+- proof comparison does not enable automatic proof equivalence;
+- counterexample target and witness remain explicit;
+- every displayed Mathematics statement keeps at least one attestation and the original blocked staging flag;
+- Mathematics does not gain an invented graph path to Gravity or Love;
+- preview authorization, statement staging, theorem-type promotion and automatic proof-equivalence changes fail closed.
 
-They are interaction/rendering checks, **not** live GitHub Pages end-to-end tests, HTTP transport checks, native network ESM-loader tests or independent scholarly review. Deployment status must be checked separately in GitHub Actions. Do not interpret a deployment success as proof that every live browser interaction was tested.
+### Browser-test boundary
 
-The script uses Python Playwright and Chromium. `CHROMIUM` selects the executable; `TEST_OUTPUT` selects the screenshots/results directory. These are maintainer tools, not visitor requirements. `tests/browser_test.py` is the prior v0.2 fixture and is retained as history; use `browser_v03.py` for this release.
+**v0.4 has not been rerun through the Chromium interaction harness.** The earlier v0.3 release completed 31 controlled in-memory Chromium scenario groups at desktop and mobile viewport sizes. Those v0.3 results are historical and must not be presented as v0.4 browser coverage.
 
-## Source inspection is separate
+The v0.4 UI has module syntax coverage and model/regression coverage. GitHub Pages deployment is checked separately after the main branch is updated.
 
-The six paraphrases were re-inspected by the same assistant against Refworld's UDHR PDF page 4 and the three linked National Archives transcriptions. The review scope is document content only. No independent review, legal-effect assessment or historical-implementation finding is claimed. Full source snapshots are not archived.
+## v0.3 — Democracy and relation registry
 
-## Manual live smoke check
+Recorded 5 October 2026.
 
-Open the normal site and look for **EXPLORER / 0.3**. Follow Society → Government & participation → Democracy. Open an edge, check its source link and pending-review label, then inspect Sources and Relations. Original Nature/Culture/Mind routes remain available. No GitHub settings or local installation is required.
+- Core/contract Node tests at that release: **56 passed; 0 failed**.
+- Controlled Chromium interaction scenario groups: **31 passed; 0 failed**.
+- Browser fixture used in-memory project files with a controlled fetch stub; it was not a live GitHub Pages end-to-end test.
+
+## v0.2 — Atlas navigation
+
+- Core tests: **20 passed**.
+- Browser scenarios: **18 passed** in desktop and mobile fixtures.
+
+## What tests do not establish
+
+Passing structural or UI tests does not independently verify historical, political or mathematical claims. A deployed page does not turn a staged assessment into verified knowledge. Mathlib documentation inspection is not local proof replay, and agreement between source presentations is not independent mathematical peer review.
