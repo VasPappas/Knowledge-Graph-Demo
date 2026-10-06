@@ -1,0 +1,114 @@
+{
+  "version": "0.4.0",
+  "recorded_on": "2026-10-06",
+  "actor": "ChatGPT, implementing the project owner's Mathematics publication request",
+  "authorization": {
+    "request": "ok, and can you also add your Mathematics build into Atlas ?",
+    "mode": "public_review_preview",
+    "demo_display_authorized": true,
+    "verified_knowledge_publication": false,
+    "private_repository_visibility_changed": false,
+    "note": "This authorizes display of the staged Mathematics records in the public demo while preserving their original publication_allowed=false and pending-review states. Display is not independent mathematical verification."
+  },
+  "mathematics": {
+    "semantics": {
+      "file": "mathematics-semantics-v0.1.json",
+      "version": "0.1.0",
+      "git_blob_sha": "91fc8d6806d2c3991def67c12030a22328358357"
+    },
+    "batches": [
+      {
+        "file": "mathematics-batch-001.json",
+        "id": "MATH-B001",
+        "git_blob_sha": "7cc1f6aeeb4d022343b35ae48fc92155a9cc87ed"
+      },
+      {
+        "file": "mathematics-batch-002.json",
+        "id": "MATH-B002",
+        "git_blob_sha": "f1d3bc133e64d39d354cdd5d6c688ba2cf083fac"
+      },
+      {
+        "file": "mathematics-batch-003.json",
+        "id": "MATH-B003",
+        "git_blob_sha": "889d70953456922a13d4f0c37bc3997a4a463cc4"
+      }
+    ],
+    "allowed_statement_ids": [
+      "MATH:ST:001",
+      "MATH:ST:002",
+      "MATH:ST:003",
+      "MATH:ST:004",
+      "MATH:ST:005",
+      "MATH:ST:006",
+      "MATH:ST:007",
+      "MATH:ST:009",
+      "MATH:ST:010",
+      "MATH:ST:011",
+      "MATH:ST:012",
+      "MATH:ST:013"
+    ],
+    "review_note": "All Mathematics records remain AI-assisted source/structure checks pending independent mathematical review. Mathlib documentation was inspected but not locally recompiled. Source snapshots are not archived."
+  },
+  "exclusions": [
+    "The provisional 45-node Mathematics expansion universe that was not ingested",
+    "Any claim that Mathlib documentation was independently recompiled or audited",
+    "Automatic equivalence between Euclid's historical prime definition and the modern natural-number definition",
+    "Any inference that computational checks prove the Riemann hypothesis",
+    "Automatic proof equivalence, proof ranking, or proof-independence claims",
+    "Private agent instructions and internal research files"
+  ],
+  "atlas_extension": {
+    "topics": [
+      {
+        "id": "mathematics",
+        "name": "Mathematics",
+        "parent": "formal",
+        "description": "Definitions, propositions, proofs, counterexamples and formalizations. The first collection focuses on prime numbers and proof."
+      },
+      {
+        "id": "prime-numbers",
+        "name": "Prime numbers & proof",
+        "parent": "mathematics",
+        "description": "A review preview with proved, open and refuted propositions, conditional hypotheses, and two different proofs of the same result.",
+        "mapping": "map-mathematics-primes",
+        "preview": true
+      }
+    ],
+    "mapping": {
+      "id": "map-mathematics-primes",
+      "focus": "MATH:P:INFINITE_PRIMES",
+      "nodeIds": [
+        "MATH:W:EUCLID_ELEMENTS_HEATH",
+        "MATH:C:PRIME_EUCLID",
+        "MATH:C:PRIME_MODERN",
+        "MATH:P:COMPOSITE_HAS_PRIME_DIVISOR",
+        "MATH:P:INFINITE_PRIMES",
+        "MATH:PRF:EUCLID_IX20",
+        "MATH:FS:LEAN_MATHLIB",
+        "MATH:FA:NAT_PRIME",
+        "MATH:FA:INFINITE_PRIMES",
+        "MATH:C:RIEMANN_ZETA",
+        "MATH:P:RIEMANN_HYPOTHESIS",
+        "MATH:W:RIEMANN_1859",
+        "MATH:P:PRIME_NUMBER_THEOREM",
+        "MATH:P:ALL_PRIMES_ODD",
+        "MATH:N:TWO",
+        "MATH:P:TWO_IS_PRIME",
+        "MATH:P:TWO_IS_EVEN",
+        "MATH:CX:TWO_REFUTES_ALL_PRIMES_ODD",
+        "MATH:P:EUCLID_LEMMA_NAT",
+        "MATH:PRF:EUCLID_VII30",
+        "MATH:FA:PRIME_DVD_MUL",
+        "MATH:P:EULER_PRODUCT_ZETA",
+        "MATH:P:ZETA_UNBOUNDED_AT_ONE",
+        "MATH:PRF:EULER_ANALYTIC_INFINITE_PRIMES"
+      ],
+      "rationale": "Editorial placement of the staged prime-number/proof pilot under Formal Systems. Proof objects, proposition statuses, historical sources and formal artifacts remain distinct; this mapping does not itself add mathematical claims."
+    },
+    "journey": {
+      "topic": "prime-numbers",
+      "label": "One proposition, two proofs",
+      "question": "Compare Euclid's finite construction with an Euler-style analytic route, then inspect open and refuted propositions."
+    }
+  }
+}
