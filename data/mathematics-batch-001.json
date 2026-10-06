@@ -1,0 +1,365 @@
+{
+  "batch_id": "MATH-B001",
+  "domain": "mathematics",
+  "recorded_on": "2026-10-06",
+  "state": "private_review_candidate",
+  "publication_allowed": false,
+  "created_by": "ChatGPT: AI-assisted source inspection and ontology prototyping",
+  "purpose": "A small source-grounded pilot for definitions, proof objects, formalization and open-problem status in prime-number mathematics.",
+  "limits": "Historical and formal source attributions are bounded to cited passages/documentation. No independent mathematician review or local Lean recompilation has occurred. Euclidean and modern prime definitions are deliberately not equated.",
+  "nodes": [
+    {
+      "id": "MATH:W:EUCLID_ELEMENTS_HEATH",
+      "type": "Work",
+      "name": "Euclid's Elements, Heath English translation"
+    },
+    {
+      "id": "MATH:C:PRIME_EUCLID",
+      "type": "Concept",
+      "name": "Prime number in Euclid Book VII Definition 11 context"
+    },
+    {
+      "id": "MATH:C:PRIME_MODERN",
+      "type": "Concept",
+      "name": "Prime natural number (modern formal predicate context)"
+    },
+    {
+      "id": "MATH:P:COMPOSITE_HAS_PRIME_DIVISOR",
+      "type": "Proposition",
+      "name": "Every composite number has a prime divisor",
+      "content": "Every composite number is measured/divided by some prime number, in the terminology of Euclid Book VII Proposition 31."
+    },
+    {
+      "id": "MATH:P:INFINITE_PRIMES",
+      "type": "Proposition",
+      "name": "There are infinitely many prime numbers",
+      "content": "For every finite bound/list of primes, a prime exists beyond it; a modern formalization can state this as: for every natural n, there exists a prime p with n ≤ p."
+    },
+    {
+      "id": "MATH:PRF:EUCLID_IX20",
+      "type": "Proof",
+      "name": "Euclid Book IX Proposition 20 proof"
+    },
+    {
+      "id": "MATH:FS:LEAN_MATHLIB",
+      "type": "FormalSystem",
+      "name": "Lean + Mathlib4 natural-number prime formalization context"
+    },
+    {
+      "id": "MATH:FA:NAT_PRIME",
+      "type": "FormalArtifact",
+      "name": "Mathlib4 Nat.Prime definition/theorems"
+    },
+    {
+      "id": "MATH:FA:INFINITE_PRIMES",
+      "type": "FormalArtifact",
+      "name": "Mathlib4 Nat.exists_infinite_primes"
+    },
+    {
+      "id": "MATH:C:RIEMANN_ZETA",
+      "type": "Concept",
+      "name": "Riemann zeta function"
+    },
+    {
+      "id": "MATH:P:RIEMANN_HYPOTHESIS",
+      "type": "Proposition",
+      "name": "Riemann hypothesis",
+      "content": "The nontrivial zeros of the Riemann zeta function have real part 1/2."
+    },
+    {
+      "id": "MATH:W:RIEMANN_1859",
+      "type": "Work",
+      "name": "Riemann's 1859 paper on primes"
+    },
+    {
+      "id": "MATH:P:PRIME_NUMBER_THEOREM",
+      "type": "Proposition",
+      "name": "Prime number theorem",
+      "content": "The number of primes less than x is asymptotic to x/log(x)."
+    }
+  ],
+  "sources": [
+    {
+      "id": "MATH:S:PERSEUS_VII_DEF11",
+      "publisher": "Perseus Digital Library",
+      "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0086%3Abook%3D7%3Atype%3DDef%3Anumber%3D11",
+      "edition": "Thomas L. Heath English translation; Perseus text of Euclid, Elements, Book VII, Definition 11",
+      "locator": "Book VII, Definition 11",
+      "accessed_on": "2026-10-06",
+      "inspection": "Web text inspected; source states Euclid's prime-number definition in Heath's translation.",
+      "snapshot_stored": false
+    },
+    {
+      "id": "MATH:S:EUCLID_VII_31",
+      "publisher": "Euclid's Elements online edition",
+      "url": "https://www.euclids-elements.org/elements/books/bookVII/propositions/propVII31/",
+      "edition": "Online presentation of Euclid, Elements, Book VII, Proposition 31",
+      "locator": "Book VII, Proposition 31",
+      "accessed_on": "2026-10-06",
+      "inspection": "Web text inspected; proposition states that every composite number is measured by some prime number.",
+      "snapshot_stored": false
+    },
+    {
+      "id": "MATH:S:PERSEUS_IX20",
+      "publisher": "Perseus Digital Library",
+      "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0086%3Abook%3D9",
+      "edition": "Thomas L. Heath English translation; Perseus Book IX",
+      "locator": "Book IX, Proposition 20",
+      "accessed_on": "2026-10-06",
+      "inspection": "Web text inspected; proposition and demonstration inspected, including the explicit use of VII.31.",
+      "snapshot_stored": false
+    },
+    {
+      "id": "MATH:S:MATHLIB_PRIME_DEFS",
+      "publisher": "Lean community / Mathlib4 documentation",
+      "url": "https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Nat/Prime/Defs.html",
+      "edition": "Current Mathlib4 generated documentation inspected 2026-10-06",
+      "locator": "Nat.Prime documentation and Nat.prime_def_* declarations",
+      "accessed_on": "2026-10-06",
+      "inspection": "Documentation states that Nat.Prime p means p is a natural at least 2 whose only divisors are p and 1.",
+      "snapshot_stored": false
+    },
+    {
+      "id": "MATH:S:MATHLIB_INFINITE",
+      "publisher": "Lean community / Mathlib4 documentation",
+      "url": "https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Nat/Prime/Infinite.html",
+      "edition": "Current Mathlib4 generated documentation inspected 2026-10-06",
+      "locator": "Nat.exists_infinite_primes",
+      "accessed_on": "2026-10-06",
+      "inspection": "Documentation exposes theorem Nat.exists_infinite_primes (n : ℕ) : ∃ p, n ≤ p ∧ Prime p.",
+      "snapshot_stored": false
+    },
+    {
+      "id": "MATH:S:CLAY_RH",
+      "publisher": "Clay Mathematics Institute",
+      "url": "https://www.claymath.org/millennium/Riemann-Hypothesis/",
+      "edition": "Clay Millennium Problems Riemann Hypothesis page inspected 2026-10-06",
+      "locator": "Overview / problem statement",
+      "accessed_on": "2026-10-06",
+      "inspection": "Page labels the problem Unsolved and states the hypothesis in terms of nontrivial zeta zeros having real part 1/2.",
+      "snapshot_stored": false
+    },
+    {
+      "id": "MATH:S:CLAY_RIEMANN1859",
+      "publisher": "Clay Mathematics Institute",
+      "url": "https://www.claymath.org/collections/riemanns-1859-manuscript/",
+      "edition": "Clay collection page for Riemann's 1859 manuscript inspected 2026-10-06",
+      "locator": "Historical overview",
+      "accessed_on": "2026-10-06",
+      "inspection": "Page identifies the 1859 paper, describes its zeta-function connection to primes, states the prime number theorem asymptotic, and describes Riemann's conjecture.",
+      "snapshot_stored": false
+    }
+  ],
+  "definition_records": [
+    {
+      "id": "MATH:DEF:EUCLID_PRIME",
+      "term": "MATH:C:PRIME_EUCLID",
+      "definition_content": "In Heath's translation of Euclid VII Definition 11, a prime number is described as measured by a unit alone.",
+      "source_id": "MATH:S:PERSEUS_VII_DEF11",
+      "scope": "Euclid Book VII / Heath translation historical terminology",
+      "review_status": "AI_text_checked_pending_independent_review"
+    },
+    {
+      "id": "MATH:DEF:MODERN_PRIME",
+      "term": "MATH:C:PRIME_MODERN",
+      "definition_content": "In Mathlib4's natural-number context, Prime p means p is at least 2 and has no divisors other than 1 and p.",
+      "source_id": "MATH:S:MATHLIB_PRIME_DEFS",
+      "scope": "Mathlib4 natural numbers",
+      "review_status": "AI_text_checked_pending_independent_review"
+    }
+  ],
+  "proofs": [
+    {
+      "id": "MATH:PRF:EUCLID_IX20",
+      "conclusion": "MATH:P:INFINITE_PRIMES",
+      "representation_source": "MATH:S:PERSEUS_IX20",
+      "depends_on": [
+        "MATH:P:COMPOSITE_HAS_PRIME_DIVISOR"
+      ],
+      "assumptions_or_framework": "Euclid's arithmetical framework as represented in the cited Book IX text; modern equivalence is not silently asserted.",
+      "method": "Argument using a number divisible by the assigned primes plus one, splitting into prime/composite cases.",
+      "review_status": "historical_text_structure_AI_checked_pending_independent_math_review"
+    }
+  ],
+  "formalizations": [
+    {
+      "id": "MATH:FORM:NAT_PRIME",
+      "formal_artifact": "MATH:FA:NAT_PRIME",
+      "mathematical_content": "MATH:C:PRIME_MODERN",
+      "formal_system": "MATH:FS:LEAN_MATHLIB",
+      "source_id": "MATH:S:MATHLIB_PRIME_DEFS",
+      "formal_expression_summary": "Nat.Prime p; documentation characterizes it as a natural number at least 2 with only 1 and p as divisors.",
+      "verification": "documentation_inspected_not_locally_recompiled"
+    },
+    {
+      "id": "MATH:FORM:INFINITE_PRIMES",
+      "formal_artifact": "MATH:FA:INFINITE_PRIMES",
+      "mathematical_content": "MATH:P:INFINITE_PRIMES",
+      "formal_system": "MATH:FS:LEAN_MATHLIB",
+      "source_id": "MATH:S:MATHLIB_INFINITE",
+      "formal_expression_summary": "Nat.exists_infinite_primes (n : ℕ) : ∃ (p : ℕ), n ≤ p ∧ Prime p",
+      "verification": "documentation_inspected_not_locally_recompiled"
+    }
+  ],
+  "statements": [
+    {
+      "id": "MATH:ST:001",
+      "relation": "R_DOCUMENT_STATES",
+      "subject": "MATH:W:EUCLID_ELEMENTS_HEATH",
+      "object": "MATH:P:COMPOSITE_HAS_PRIME_DIVISOR",
+      "qualifiers": {
+        "locator": "Book VII, Proposition 31",
+        "claim_scope": "document_content_only"
+      },
+      "workflow_status": "awaiting_independent_review",
+      "publication_allowed": false
+    },
+    {
+      "id": "MATH:ST:002",
+      "relation": "R_DOCUMENT_STATES",
+      "subject": "MATH:W:EUCLID_ELEMENTS_HEATH",
+      "object": "MATH:P:INFINITE_PRIMES",
+      "qualifiers": {
+        "locator": "Book IX, Proposition 20",
+        "claim_scope": "document_content_only"
+      },
+      "workflow_status": "awaiting_independent_review",
+      "publication_allowed": false
+    },
+    {
+      "id": "MATH:ST:003",
+      "relation": "MATH_R_PROOF_USES",
+      "subject": "MATH:PRF:EUCLID_IX20",
+      "object": "MATH:P:COMPOSITE_HAS_PRIME_DIVISOR",
+      "qualifiers": {
+        "locator": "Book IX, Proposition 20 explicitly cites VII.31",
+        "claim_scope": "proof_dependency"
+      },
+      "workflow_status": "awaiting_independent_review",
+      "publication_allowed": false
+    },
+    {
+      "id": "MATH:ST:004",
+      "relation": "MATH_R_PROOF_ESTABLISHES",
+      "subject": "MATH:PRF:EUCLID_IX20",
+      "object": "MATH:P:INFINITE_PRIMES",
+      "qualifiers": {
+        "scope": "Euclid IX.20 historical proof interpretation",
+        "claim_scope": "proof_conclusion"
+      },
+      "workflow_status": "awaiting_independent_math_review",
+      "publication_allowed": false
+    },
+    {
+      "id": "MATH:ST:005",
+      "relation": "MATH_R_FORMALIZES",
+      "subject": "MATH:FA:INFINITE_PRIMES",
+      "object": "MATH:P:INFINITE_PRIMES",
+      "qualifiers": {
+        "formal_system": "MATH:FS:LEAN_MATHLIB",
+        "verification": "documentation_inspected_not_locally_recompiled"
+      },
+      "workflow_status": "awaiting_independent_review",
+      "publication_allowed": false
+    },
+    {
+      "id": "MATH:ST:006",
+      "relation": "R_DOCUMENT_STATES",
+      "subject": "MATH:W:RIEMANN_1859",
+      "object": "MATH:P:RIEMANN_HYPOTHESIS",
+      "qualifiers": {
+        "source_basis": "Clay historical overview of Riemann 1859 manuscript",
+        "claim_scope": "historical_attribution"
+      },
+      "workflow_status": "awaiting_independent_review",
+      "publication_allowed": false
+    },
+    {
+      "id": "MATH:ST:007",
+      "relation": "R_DOCUMENT_STATES",
+      "subject": "MATH:W:RIEMANN_1859",
+      "object": "MATH:P:PRIME_NUMBER_THEOREM",
+      "qualifiers": {
+        "source_basis": "Clay manuscript overview discusses the later theorem and its asymptotic; this row is historical context, not a claim that Riemann proved PNT.",
+        "claim_scope": "historical_context_only"
+      },
+      "workflow_status": "awaiting_independent_review",
+      "publication_allowed": false
+    }
+  ],
+  "status_assessments": [
+    {
+      "id": "MATH:AS:INFINITE_PRIMES",
+      "proposition": "MATH:P:INFINITE_PRIMES",
+      "status": "proved",
+      "scope": "Modern natural-number proposition; supported here by a historical proof record plus documented formalization, independent review pending.",
+      "basis": [
+        "MATH:PRF:EUCLID_IX20",
+        "MATH:FORM:INFINITE_PRIMES"
+      ],
+      "review_status": "AI_structural_and_source_check_pending_independent_math_review"
+    },
+    {
+      "id": "MATH:AS:RH",
+      "proposition": "MATH:P:RIEMANN_HYPOTHESIS",
+      "status": "open",
+      "scope": "Clay Millennium Problem statement as of source inspection date 2026-10-06.",
+      "basis": [
+        "MATH:S:CLAY_RH"
+      ],
+      "review_status": "AI_source_check_pending_independent_review",
+      "note": "Computational checks of zeros are not treated as a proof."
+    }
+  ],
+  "attestations": [
+    {
+      "id": "MATH:AT:001",
+      "statement_id": "MATH:ST:001",
+      "source_id": "MATH:S:EUCLID_VII_31",
+      "stance": "supports_document_content_attribution",
+      "locator": "Book VII, Proposition 31"
+    },
+    {
+      "id": "MATH:AT:002",
+      "statement_id": "MATH:ST:002",
+      "source_id": "MATH:S:PERSEUS_IX20",
+      "stance": "supports_document_content_attribution",
+      "locator": "Book IX, Proposition 20"
+    },
+    {
+      "id": "MATH:AT:003",
+      "statement_id": "MATH:ST:003",
+      "source_id": "MATH:S:PERSEUS_IX20",
+      "stance": "supports_proof_dependency_attribution",
+      "locator": "Book IX, Proposition 20; explicit reference to VII.31"
+    },
+    {
+      "id": "MATH:AT:004",
+      "statement_id": "MATH:ST:004",
+      "source_id": "MATH:S:PERSEUS_IX20",
+      "stance": "supports_historical_proof_record",
+      "locator": "Book IX, Proposition 20"
+    },
+    {
+      "id": "MATH:AT:005",
+      "statement_id": "MATH:ST:005",
+      "source_id": "MATH:S:MATHLIB_INFINITE",
+      "stance": "supports_formal_artifact_attribution",
+      "locator": "Nat.exists_infinite_primes"
+    },
+    {
+      "id": "MATH:AT:006",
+      "statement_id": "MATH:ST:006",
+      "source_id": "MATH:S:CLAY_RIEMANN1859",
+      "stance": "supports_historical_attribution",
+      "locator": "Historical overview"
+    },
+    {
+      "id": "MATH:AT:007",
+      "statement_id": "MATH:ST:007",
+      "source_id": "MATH:S:CLAY_RIEMANN1859",
+      "stance": "supports_historical_context_attribution",
+      "locator": "Historical overview"
+    }
+  ]
+}
